@@ -2,7 +2,7 @@
   "name": "smartjan_site",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://tetsujin47.github.io/tetsjin.github.io/",
+  "homepage": "https://tetsujin47.github.io/smartjan_site/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
