@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/smartjan_site/static/css/main.e6c13ad2.css",
-    "main.js": "/smartjan_site/static/js/main.552ee334.js",
+    "main.js": "/smartjan_site/static/js/main.ca0c8f7d.js",
     "static/js/453.0b2754dc.chunk.js": "/smartjan_site/static/js/453.0b2754dc.chunk.js",
     "index.html": "/smartjan_site/index.html",
     "main.e6c13ad2.css.map": "/smartjan_site/static/css/main.e6c13ad2.css.map",
-    "main.552ee334.js.map": "/smartjan_site/static/js/main.552ee334.js.map",
+    "main.ca0c8f7d.js.map": "/smartjan_site/static/js/main.ca0c8f7d.js.map",
     "453.0b2754dc.chunk.js.map": "/smartjan_site/static/js/453.0b2754dc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.552ee334.js"
+    "static/js/main.ca0c8f7d.js"
   ]
 }
