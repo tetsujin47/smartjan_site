@@ -1,5 +1,7 @@
 import { Box, Typography } from '@mui/material'
 import { styled } from '@mui/system'
+import titleImage from '../public/titleimg.jpeg';
+import appstoreImage from '../public/get_from_appstore.jpeg';
 
 // カスタムスタイルを定義
 const HighlightedText = styled('span')({
@@ -19,7 +21,7 @@ const Welcome = () => {
             lg: '70vh', // Large screens
             xl: '80vh', // Extra large screens
           },
-          backgroundImage: 'url(/titleimg.jpeg)',
+          backgroundImage: 'url(${titleImage})',
           backgroundSize: 'contain',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
@@ -108,7 +110,7 @@ const Welcome = () => {
               sx={{
                 width: '150px', // 画像の幅を設定
                 height: '80px', // 画像の高さを設定
-                backgroundImage: 'url(/get_from_appstore.jpeg)', // クリック可能な画像のURL
+                backgroundImage: 'url(${appstoreImage})', // クリック可能な画像のURL
                 backgroundSize: 'contain', // 画像をコンテナ内に収める
                 backgroundRepeat: 'no-repeat', // 画像の繰り返しを防ぐ
                 backgroundPosition: 'center',
