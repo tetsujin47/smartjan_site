@@ -47,17 +47,13 @@ export default function FAQ() {
         // }}
         sx={{
           fontWeight: 'bold',
-          fontSize: '2rem', // 文字サイズを大きくする
+          fontSize: { xs: '20px', sm: '2rem' }, // 文字サイズを大きくする
           textAlign: 'left', // テキストを中央揃え
           backgroundRepeat: 'no-repeat', // 画像の繰り返しを防ぐ
           // paddingTop: '60px', // 上側に余白を追加
           paddingRight: '16px', // 右側に余白を追加
           paddingBottom: '0px', // 下側には余白を追加しない
           paddingLeft: '16px', // 左側に余白を追加
-
-          '@media (max-width: 600px)': {
-            fontSize: '1.5rem', // スマホサイズの文字サイズ
-          },
         }}
       >
         スマート雀に関するよくある質問
@@ -73,9 +69,12 @@ export default function FAQ() {
           paddingRight: '16px', // 右側に余白を追加
           paddingBottom: '24px', // 下側には余白を追加しない
           paddingLeft: '16px', // 左側に余白を追加
+          '@media (max-width: 600px)': {
+            fontSize: '10px',
+          },
         }}
       >
-        <HighlightedText>What is Smart Jan</HighlightedText>
+        <HighlightedText>FAQ</HighlightedText>
       </Typography>
       <Box sx={{ width: '100%', paddingBottom: '24px' }}>
         <Accordion
@@ -87,7 +86,15 @@ export default function FAQ() {
             aria-controls="panel1d-content"
             id="panel1d-header"
           >
-            <Typography component="h3" variant="subtitle2">
+            <Typography
+              component="h3"
+              variant="subtitle2"
+              sx={{
+                '@media (max-width: 600px)': {
+                  fontSize: '12px',
+                }, // 文字サイズを大きくする
+              }}
+            >
               サブスクリプションの解約方法を教えてください。
             </Typography>
           </AccordionSummary>
@@ -95,7 +102,12 @@ export default function FAQ() {
             <Typography
               variant="body2"
               gutterBottom
-              sx={{ maxWidth: { sm: '100%', md: '70%' } }}
+              sx={{
+                maxWidth: { sm: '100%', md: '70%' },
+                '@media (max-width: 600px)': {
+                  fontSize: '12px',
+                }, // 文字サイズを大きくする
+              }}
             >
               定期購読を解約するには、iOSの設定アプリを開き、[サブスクリプション]をタップしてから、このアプリのサブスクリプションを選択して解約してください。解約手続きが完了するまで、次回の課金が行われることがあります。詳細については
               <Link
@@ -118,7 +130,15 @@ export default function FAQ() {
             aria-controls="panel2d-content"
             id="panel2d-header"
           >
-            <Typography component="h3" variant="subtitle2">
+            <Typography
+              component="h3"
+              variant="subtitle2"
+              sx={{
+                  '@media (max-width: 600px)': {
+                    fontSize: '12px',
+                  }, // 文字サイズを大きくする
+              }}
+            >
               チーポンカンの設定方法が分からない。
             </Typography>
           </AccordionSummary>
@@ -126,7 +146,14 @@ export default function FAQ() {
             <Typography
               variant="body2"
               gutterBottom
-              sx={{ maxWidth: { sm: '100%', md: '70%' } }}
+              sx={{
+                maxWidth: { sm: '100%', md: '70%' },
+                fontSize: {
+                  '@media (max-width: 600px)': {
+                    fontSize: '12px',
+                  }, // 文字サイズを大きくする
+                },
+              }}
             >
               鳴いた牌と手牌を入力後に鳴きたい牌をタップすることで、鳴いたり、牌の変更や削除を行うことが可能です。
               <br />
@@ -164,7 +191,7 @@ export default function FAQ() {
           component="a"
           href="https://docs.google.com/forms/d/1xYx0kpBq9lsxbHJO6IHsgx3rfo6_BOleRS_ODpC38M4/"
           target="_blank"
-          sx={{ minWidth: '60%', borderRadius: '999px' }}
+          sx={{ width: '60%', maxWidth: '400px', borderRadius: '999px' }}
         >
           お問合せ
         </Button>

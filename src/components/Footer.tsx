@@ -14,6 +14,19 @@ function Copyright() {
 }
 
 export default function Footer() {
+  const scrollToSection = (sectionId: string) => {
+    const sectionElement = document.getElementById(sectionId)
+    const offset = 128
+    if (sectionElement) {
+      const targetScroll = sectionElement.offsetTop - offset
+      sectionElement.scrollIntoView({ behavior: 'smooth' })
+      window.scrollTo({
+        top: targetScroll,
+        behavior: 'smooth',
+      })
+    }
+  }
+
   return (
     <Container
       sx={{
@@ -42,7 +55,7 @@ export default function Footer() {
           }}
         >
           <Typography variant="body2" fontWeight={600}>
-              スマート雀について
+            スマート雀について
           </Typography>
           <Box
             sx={{
@@ -52,20 +65,20 @@ export default function Footer() {
               minWidth: { xs: '100%', sm: '60%' },
             }}
           >
-            <Link color="text.secondary" href="#">
-              特徴
+            <Link
+              color="text.secondary"
+              onClick={() => scrollToSection('features')}
+            >
+              スマート雀とは
             </Link>
-            <Link color="text.secondary" href="#">
-              使い方
-            </Link>
-            <Link color="text.secondary" href="#">
+            <Link
+              color="text.secondary"
+              onClick={() => scrollToSection('pricing')}
+            >
               料金
             </Link>
-            <Link color="text.secondary" href="#">
+            <Link color="text.secondary" onClick={() => scrollToSection('faq')}>
               よくある質問
-            </Link>
-            <Link color="text.secondary" href="#">
-              お知らせ
             </Link>
           </Box>
         </Box>
@@ -81,13 +94,19 @@ export default function Footer() {
         }}
       >
         <div>
-          <Link color="text.secondary" href="https://kazukimu.github.io/MahjongPointToolUsage/terms_and_conditions.html">
+          <Link
+            color="text.secondary"
+            href="https://kazukimu.github.io/MahjongPointToolUsage/terms_and_conditions.html"
+          >
             利用規約
           </Link>
           <Typography display="inline" sx={{ mx: 0.5, opacity: 0.5 }}>
             &nbsp;•&nbsp;
           </Typography>
-          <Link color="text.secondary" href="https://kazukimu.github.io/MahjongPointToolUsage/privacy_policy.html">
+          <Link
+            color="text.secondary"
+            href="https://kazukimu.github.io/MahjongPointToolUsage/privacy_policy.html"
+          >
             プライバシーポリシー
           </Link>
           <Copyright />

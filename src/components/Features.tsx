@@ -9,7 +9,6 @@ import {
 } from '@mui/material'
 import { styled } from '@mui/system'
 import CircleIcon from '@mui/icons-material/Circle'
-
 // カスタムスタイルを定義
 const HighlightedText = styled('span')({
   color: 'rgba(37, 40, 221, 0.9)', // ここで指定したい色に変更
@@ -29,9 +28,16 @@ const images = [
   'STEP3.jpeg', // STEP3の画像
 ]
 
-function CustomStepIcon() {
-  return <CircleIcon style={{ color: '#0A66C2' }} />
-}
+const CustomStepIcon: React.FC = () => {
+  
+  return <CircleIcon style={{ color: '#0A66C2' }} sx={{
+
+    '@media (max-width: 600px)': {
+          fontSize :'small', // 文字サイズを大きくする
+    }
+  }
+  } />;
+};
 
 const Features = () => {
   return (
@@ -53,6 +59,9 @@ const Features = () => {
             paddingRight: '16px', // 右側に余白を追加
             // paddingBottom: '0px', // 下側には余白を追加しない
             paddingLeft: '16px', // 左側に余白を追加
+            '@media (max-width: 600px)': {
+              fontSize: '24px', // 文字サイズを大きくする
+            },
           }}
         >
           スマート雀とは？
@@ -68,6 +77,9 @@ const Features = () => {
             paddingRight: '16px', // 右側に余白を追加
             paddingBottom: '16px', // 下側には余白を追加
             paddingLeft: '16px', // 左側に余白を追加
+            '@media (max-width: 600px)': {
+              fontSize: '10px', // 文字サイズを大きくする
+            },
           }}
         >
           <HighlightedText>What is Smart Jan</HighlightedText>
@@ -84,6 +96,10 @@ const Features = () => {
             paddingRight: '16px', // 右側に余白を追加
             paddingBottom: { xs: 0, sm: 4 }, // 下側には余白を追加
             paddingLeft: '16px', // 左側に余白を追加
+            '@media (max-width: 600px)': {
+              fontSize: '12px', // 文字サイズを大きくする
+              fontWeight: 'normal',
+            },
           }}
         >
           スマート雀はカメラで牌を瞬時に読み取り、簡単な操作で麻雀点数計算できるアプリです。
@@ -96,19 +112,44 @@ const Features = () => {
             maxWidth: 600,
             margin: 'auto',
             mt: 5,
+            padding: 1,
+
+            '@media (max-width: 600px)': {
+              maxWidth: 300,
+              margin: 'auto',
+              mt: 1,
+              padding: 1,
+            },
           }}
         >
           <Stepper activeStep={-1} orientation="vertical">
             {steps.map((label, index) => (
               <Step key={label} completed>
-                <StepLabel StepIconComponent={CustomStepIcon}>
-                  <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                <StepLabel
+                  StepIconComponent={CustomStepIcon}
+                >
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      fontWeight: 'bold',
+                      '@media (max-width: 600px)': { fontSize: '12px' },
+                    }}
+                  >
                     {label}
                   </Typography>
                 </StepLabel>
                 <Paper
                   elevation={3}
-                  sx={{ padding: 2, marginTop: 1, marginBottom: 2 }}
+                  sx={{
+                    padding: 1,
+                    marginTop: 1,
+                    marginBottom: 1,
+                    '@media (max-width: 600px)': {
+                      padding: 0.5,
+                      marginTop: 0.5,
+                      marginBottom: 0.5,
+                    },
+                  }}
                 >
                   <img
                     src={images[index]}
@@ -120,7 +161,16 @@ const Features = () => {
                       margin: '0 auto 10px auto',
                     }}
                   />
-                  <Typography variant="body2">{descriptions[index]}</Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      '@media (max-width: 600px)': {
+                        fontSize: '12px',
+                      },
+                    }}
+                  >
+                    {descriptions[index]}
+                  </Typography>
                 </Paper>
               </Step>
             ))}
